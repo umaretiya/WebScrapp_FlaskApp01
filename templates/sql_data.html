@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Sql Table</title>
+</head>
+<h4>SQL Table
+</h4>
+
+<div class="table-users">
+    <div class="header">Course_data</div>
+
+    <table cellspacing="0">
+        <tr>
+            <th>Sr No</th>
+            <th>Course Name</th>
+            <th>Course Link</th>
+            <th>Instructor Name</th>
+            <th>Price</th>
+            <th width="150">Descriptions</th>
+
+
+        </tr>
+        {% for query in all_query %}
+        <tr>
+
+            <th scope="row">{{ loop.index }}</th>
+            <td>{{query.course_name}}</td>
+            <td>>{{query.course_link}}</td>
+            <td>{{query.instructor_name}}</td>
+            <td>{{query.course_price }}</td>
+            <td>{{query.description}}</td>
+
+            {% endfor %}
+    </table>
+
+    <body>
+
+    </body>
+
+</html>

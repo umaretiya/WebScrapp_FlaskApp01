@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Sql Table</title>
+</head>
+<h4>Monogo Table
+</h4>
+
+<div class="table-users">
+    <div class="header">Course_data</div>
+
+    <h3>Mogodb Data is uploaded in Local host</h3>
+
+
+    <body>
+        <table cellspacing="0">
+            <tr>
+                <th>Sr No</th>
+                <th>Course Name</th>
+            </tr>
+            {% for mongo in mongos %}
+            <tr>
+                <th scope="row">{{ loop.index }}</th>
+                <td>{{ mongo }}</td>
+
+                {% endfor %}
+        </table>
+    </body>
+
+</html>
